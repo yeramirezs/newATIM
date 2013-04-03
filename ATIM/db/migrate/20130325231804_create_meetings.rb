@@ -1,0 +1,10 @@
+class CreateMeetings < ActiveRecord::Migration
+  def change
+    create_table :meetings do |t|
+      t.string     :title,      :null => false
+      t.integer    :thesis_id,   :null => false
+      t.date       :fecha, 		:null => false
+      t.timestamps
+    end
+  end
+end

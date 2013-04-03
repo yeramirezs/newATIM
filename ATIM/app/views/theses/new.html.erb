@@ -1,0 +1,68 @@
+<%= render "layouts/header"%>
+<table width="100%" align="left">
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+    	<td width="20%" valign="top" align="center">
+    		<table  style="background-color:#E6E6E6; border-radius: 15px;" width="70%" >
+    			<tr>
+    				<td>
+    				    <ul class="nav nav-list">
+					    <li class="nav-header">Options</li>
+					    <li><%= link_to "Home", index_path(:email=>@teacher.email) %></li>
+					    <li class="active"><%= link_to "Crear Tesis", new_thesis_path(:id=>@teacher.id) %></li>
+					    </ul>
+    				</td>
+    				<tr><td>&nbsp;</td></tr>
+    				<tr><td>&nbsp;</td></tr>
+    			</tr>
+    		</table>
+    	</td>
+	    <td width="75%" >
+	    	<table>
+	    		<tr>
+	    			<td><h1>New thesis</h1></td>
+				</tr>
+			    <tr>
+				    <td>
+				    	<%= form_for @thesis, :url=>{:teacher_id=>@teacher.id}, :method => :put do |f| %>
+						  <% if @thesis.errors.any? %>
+						    <div id="error_explanation">
+						      <h2><%= pluralize(@thesis.errors.count, "error") %> prohibited this thesis from being saved:</h2>
+
+						      <ul>
+						      <% @thesis.errors.full_messages.each do |msg| %>
+						        <li><%= msg %></li>
+						      <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
+						  <div class="field">
+						    <%= f.label :title %><br />
+						    <%= f.text_field :title %>
+						  </div>
+						  <div class="field">
+						    <%= f.label :description %><br />
+						    <%= f.text_field :description %>
+						  </div>
+						  <div class="actions">
+						    <%= f.submit class: "btn"%>
+						  </div>
+						<% end %>
+				    </td>
+				</tr>
+
+				</tr>    
+    		</table>
+	  	</td>
+   </tr>
+</table>
+
+
+
+
+
+
+

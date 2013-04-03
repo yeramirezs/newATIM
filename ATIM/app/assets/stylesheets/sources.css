@@ -1,0 +1,148 @@
+.tabla{
+    margin: 10px;
+    border-collapse:  collapse;
+    width: 95%;
+}
+#sources th
+{
+    font-size:1.1em;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:4px;
+    color: white;
+    background-color: royalblue;
+}
+
+.tabla th
+{
+    border: 2px solid white;
+    font-weight: bold;
+    color: black;
+    background-color: green;
+}
+
+
+.tabla td#meeting
+{
+    text-align: center;
+}
+.tabla td
+{
+    padding: 4px;
+    text-align: left;
+    border: 1px solid white;
+    color:black;
+    background-color: whitesmoke;
+    border-bottom: 2px antiquewhite;
+}
+.tabla *.r0
+{
+    color: black;
+    background-color: powderblue;
+}
+.tabla *.r1
+{
+    color: black;
+    background-color: white;
+}
+.tabla td#s1
+{
+    text-align: center;
+    color: black;
+    background-color: crimson;
+    font-weight: bold;
+}
+.tabla td#s2
+{
+    text-align: center;
+    color: black;
+    background-color: palegreen;
+    font-weight: bold;
+}
+
+.tabla td#s3
+{
+    text-align: center;
+    color: black;
+    background-color: orangered;
+    font-weight: bold;
+}
+
+.tabla td#s4
+{
+    text-align: center;
+    color: black;
+    background-color: lightyellow;
+    font-weight: bold;
+}
+
+*.text
+{
+    padding-top:4px;
+    padding-bottom:4px;
+    width:98%;
+    color: black;
+    background-color: ghostwhite;
+
+}
+
+
+*.link
+{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+*.button
+{
+    text-align:left;
+    vertical-align: middle;
+    color: black;
+    background-color: whitesmoke;
+}
+
+*.radio_button
+{
+    text-align:left;
+    vertical-align: middle;
+    color: black;
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+*.radios
+{
+    text-align:left;
+    vertical-align: middle;
+    color: black;
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+
+*.hidden
+{
+    visibility:hidden;
+}
+
+*.right
+{
+    text-align: right;
+}
+
+*.center
+{
+    text-align: center;
+}
+*.bold
+{
+    font-weight: bold;
+}
+*.selector
+{
+    font-weight:bold;
+    color:black;
+    text-align: center;
+    font-size: 20px;
+}
+
