@@ -1,0 +1,268 @@
+<%= render "layouts/header"%>
+<table width="100%" align="left">
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+    	<td width="20%" valign="top" align="center">
+    		<table  style="background-color:#E6E6E6; border-radius: 15px;" width="70%">
+    			<tr>
+    				<td>
+    				    <ul class="nav nav-list">
+					    <li class="nav-header">Options</li>
+					    <li class="active"><%= link_to "Home", index_path(:email=>@teacher.email), :post => true%></a></li>
+					    <li><%= link_to "Crear Tesis", new_thesis_path(:id=>@teacher.id) %></li>
+					    </ul>
+    				</td>
+    				<tr><td>&nbsp;</td></tr>
+    				<tr><td>&nbsp;</td></tr>
+    			</tr>
+    		</table>
+    	</td>
+	    <td width="75%">
+	    	<table width="100%">
+			    <tr>
+				    <td><b>Título de la tesis:</b><br><%= @thesis.title %><br></td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+				    <td><b>Descripción:</b><br><%= @thesis.description %></td>
+				</tr> 
+				<tr><td>&nbsp;</td></tr>
+				<tr><td><b>Más Opciones:</b></td></tr>
+				
+				<tr>
+					<td width="100%">
+						 <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
+						    <ul class="nav nav-tabs">
+							    <li class="active"><a href="#tab1" data-toggle="tab">Estado de Tesis</a></li>
+							    <li><a href="#tab2" data-toggle="tab">Estudiantes</a></li>
+                  <% if @thesis.state!='Inactiva' %>
+                    <li><a href="#tab6" data-toggle="tab">Recomendaciones</a></li>
+                  <% end %>
+							    <li><a href="#tab3" data-toggle="tab">Nueva Reunion</a></li>
+							    <li><a href="#tab5" data-toggle="tab">Nuevo Compromiso</a></li>
+                  <li><a href="#tab7" data-toggle="tab">Entregables</a></li>
+                  <li><%= link_to "Consultar compromisos", commitmentsSearch_path(:id=>@thesis.id, :comm_type=>'open') %></li>
+                  <li><%= link_to "Listar fuentes", source_path(:id=>@thesis) %></li>
+							</ul>
+						    <div class="tab-content">
+							    <div class="tab-pane active" id="tab1">
+							    	<table width="100%">
+
+							    		<%= form_tag comenzar_path(:email=>@teacher.email,:id=>@thesis.id), :method => 'post' do %>
+								    		<tr>
+									    		<td><b>Descripción:</b><br><%= @thesis.state %></td>
+									    	</tr>
+									    	<tr><td>&nbsp;</td></tr>
+									    	<tr>
+									    		<% if @thesis.state=='Inactiva' %>
+										    		<td>
+										    			<%= submit_tag "Comenzar el proceso de tesis", :name => 'comenzar', class: "btn"%>
+										    		</td>
+										    	<% else %>
+										    		<td>
+										    			<%= submit_tag "Terminar tesis", :name => 'terminar', class: "btn"%>
+										    		</td>
+									    		<% end %>
+									    	</tr>
+									    <% end %>
+								    </table>
+								</div>
+								<div class="tab-pane" id="tab2">
+									<b>Nuevo estudiante</b>
+									<%= form_for @student, :url=>{:thesis_id=>@thesis.id, :emailTeacher=>@teacher.email, :controller=>"students", :action=>"create"}, :method => "post" do |f| %>
+									  <% if @student.errors.any? %>
+									    <div id="error_explanation">
+									      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+									      <ul>
+									      <% @student.errors.full_messages.each do |msg| %>
+									        <li><%= msg %></li>
+									      <% end %>
+									      </ul>
+									    </div>
+									  <% end %>
+									  <div class="field">
+									    <%= f.text_field :name, :placeholder => 'Name' %>
+									  </div>
+									  <div class="field">
+									    <%= f.text_field :email, :placeholder => 'Email' %>
+									  </div>
+									  <div class="actions">
+									    <%= f.submit "Asignar", class: "btn"%>
+									  </div>
+									<% end %>
+								    <b>Lista de estudiantes</b>
+								    <table>
+								    	<tr>
+										    <td><b>Nombre Estudiante</b></td>
+										    <td width="10px"></td>
+										    <td><b>Email Estudiante</b></td>
+										  </tr>
+									    <% @thesis.students.each do |student| %>
+										  <tr>
+										    <td><%= student.name %></td>
+										    <td width="10px"></td>
+										    <td><%= student.email %></td>
+										  </tr>
+										<% end %>
+									</table>
+							    </div>
+                  <div class="tab-pane" id="tab3">
+                    <b>Nueva reunion.</b>
+                    <%= form_for @meeting, :url=>{:thesis_id=>@thesis.id, :controller=>"meetings", :emailTeacher=>@teacher.email, :action=>"create"}, :method=>"post" do |f| %>
+                        <% if @meeting.errors.any? %>
+                            <div id="error_explanation">
+                              <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+                              <ul>
+                                <% @meeting.errors.full_messages.each do |msg| %>
+                                    <li><%= msg %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                        <% end %>
+                        <div class="field">
+                          <%= f.text_field :title, :placeholder => 'Title' %>
+                        </div>
+                        <div class="field">
+                          <%= f.text_field :fecha, :placeholder => 'Fecha' %>
+                        </div>
+                        <div class="actions">
+                          <%= f.submit "Crear", class: "btn"%>
+                        </div>
+                    <% end %>
+                   <table>
+                     <tr>
+                       <td><b>Title</b></td>
+                       <td><b>Fecha</b></td>
+                     </tr>
+                      <% @meetings.each do |meeting| %>
+                        <tr>
+                          <td><%= meeting.title %></td>
+                          <td><%= meeting.fecha %></td>
+                        </tr>
+                      <% end %>
+                  </table>
+                  </div>
+                  <div class="tab-pane" id="tab5">
+                    <b>Lista de Reuniones</b>
+                    <table id="report" width="55%">
+                        <%= stylesheet_link_tag 'sources.css', :media => 'screen' %>
+                        <tr></tr>
+                          <% @meetings.each do |c| %>
+                          <tr>
+                              <td><%= c.fecha %></td>
+                              <td align="right"><div class="arrow"></div></td>
+                          </tr>
+                          <tr>
+                              <td  align="left" colspan="5">
+                                  <ul>
+                                      <h4>Title</h4><%= c.title%></br> 
+                                   </ul> 
+                                   <ul>
+                                      <div class="tabbable"> <!-- Only required for left/right tabs -->
+                                        <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#tab24" data-toggle="tab">Agregar compromiso</a></li>
+                                        <li><a href="#tab25" data-toggle="tab">Listar compromisos</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                          <div class="tab-pane active" id="tab24">
+                                            <b>New Commitment</b>
+                                              <%= form_for @commitment, :url=>{:thesis_id=>@thesis, :idMeeting=>c, :emailTeacher=>@teacher.email, :controller=>"commitments", :action=>"create"}, :method => "post" do |f| %>
+                                                  <div class="field">
+                                                    <%= f.text_field :title, :placeholder => 'Title' %>
+                                                  </div>
+                                                  <div class="field">
+                                                    <%= f.text_field :description, :placeholder => 'Description' %>
+                                                  </div>
+                                                  <div class="field">
+                                                    <%= f.text_field :due_date, :placeholder => 'Due Date' %>
+                                                  </div>
+                                                  <div class="field">
+                                                    <%= f.text_field :done, :placeholder => 'Done' %>
+                                                  </div>
+                                                  <div class="actions">
+                                                    <%= f.submit "Crear Compromiso", :class => "btn"%>
+                                                  </div>
+                                              <% end %>
+                                          </div>
+                                          <div class="tab-pane" id="tab25">
+                                            <b>Commitments List</b>
+                                            <table width="100%">
+                                              <% @commitments = Commitment.find_all_by_meeting_id(c) %>
+                                              <% @commitments.each do |commitment| %>
+                                                <tr><td ><%= commitment.title %></td></tr>
+                                                <tr>
+                                                  <td>
+                                                  <ul><b>Descripción</b></br><%= commitment.description %></ul>
+                                                  <ul><b>Fecha de entrega</b></br><%= commitment.due_date %></ul>
+                                                  <ul><b>Completo</b></br><%= commitment.done %></ul>
+                                                </td>
+                                                </tr>
+                                              <%end%> 
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+                                   </ul>   
+                              </td>
+                          </tr>
+                          <% end %>
+                      </table>
+                  </div>
+                  <div class="tab-pane" id="tab6">
+                    <table>
+                    <% @thesis.recommendations.each do |recommendation| %>
+                        <tr>
+                          <td><i>El <%= recommendation.created_at  %></i>:<br /><%= recommendation.recommendation %></td>
+                        </tr>
+                    <% end %>
+                    </table>
+                	  </br>
+                      <b>Nueva recomendación:</b>
+                      <table>
+                        <tr>
+                          <%= form_for :recommendation, :url=>{:thesis_id=>@thesis.id, :controller=>"recommendations", :action=>"create"}, :method => "post", :html=> {:multipart=>true} do |f| %>
+                              <div class="field">
+                                <%= f.text_field :recommendation, :placeholder => 'New Recommendation' %>
+                              </div>
+                              <div class="actions">
+                                <%= f.submit "Enviar", class: "btn"%>
+                              </div>
+                          <% end %>
+                        </tr>
+                      </table>
+                  </div>
+                <div class="tab-pane" id="tab7">
+                      <table>
+                            <% @thesis.deliverables.each do |deliverable| %>
+                            <tr>
+                              <td>El <i><%= deliverable.created_at  %></i> el estudiante entregó: <a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank"><%= deliverable.title %></a></td>
+                            </tr>
+                          <% end %>
+                      </table>
+                </div>
+            </div>
+  					</div>
+					</td>
+				</tr>  
+    		</table>
+	  	</td>
+   </tr>
+</table>
+<script type="text/javascript">  
+  $(document).ready(function(){
+      $("#report tr:odd").addClass("odd");
+      $("#report tr:not(.odd)").hide();
+      $("#report tr:first-child").show();
+      
+      $("#report tr.odd").click(function(){
+          $(this).next("tr").toggle();
+          $(this).find(".arrow").toggleClass("up");
+      });
+      //$("#report").jExpand();
+  });
+</script> 

@@ -1,0 +1,72 @@
+<%= render "layouts/headerStudent"%>
+<table  width="100%"  style="left:0px;">
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+    	<td width="20%" valign="top" align="center">
+    		<%= render "layouts/menuStudent"%>
+    	</td>
+	    <td width="75%" valign="top">
+        <h1>Entregables de tesis</h1>
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+            <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Agregar nuevo entregable</a></li>
+            <li><a href="#tab2" data-toggle="tab">Listar entregables</a></li>
+            </ul>
+            <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <h1>Nuevo entregable:</h1></br>
+
+                <table>
+                  <tr>
+                    <%= form_for :deliverable, :url=>{:thesis_id=>@thesis.id, :email=>@student.email, :controller=>"deliverables", :action=>"create"}, :method => "post" do |f| %>
+                        
+                        <div class="field">
+                          <%= f.text_field :title, :placeholder => 'Title' %>
+                        </div>
+                         </br>
+                        <div class="field">
+                          <%= f.text_field :description, :placeholder => 'Description' %>
+                        </div>
+                         </br>
+                        <div class="field">
+                          <%= f.file_field :file, :placeholder => 'File' %>
+                        </div>
+                        </br>
+                        <div class="actions">
+                          <%= f.submit "Enviar", class: "btn"%>
+                        </div>
+                    <% end %>
+                  </tr>
+                </table>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <table>
+                <% @thesis.deliverables.each do |deliverable| %>
+                    <tr>
+                      <td><i>El <%= deliverable.created_at  %></i>:<br /><%= deliverable.title %></td>
+                    </tr>
+                    <tr>
+                      <td>Archivo:<br /><a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank">Ver archivo</a></td>
+
+                    </tr>
+                <% end %>
+              </table>
+            </div>
+            </div>
+          </div>
+	  	</td>
+   </tr>
+</table>
+<table>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+  <tr><td colspan="2">
+    <% if flash[:notice] %>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </td></tr>
+</table>
+

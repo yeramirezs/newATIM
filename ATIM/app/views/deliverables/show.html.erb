@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @deliverable.title %>
+</p>
+
+<p>
+  <b>Thesis:</b>
+  <%= @deliverable.thesis_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @deliverable.description %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @deliverable.file_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_deliverable_path(@deliverable) %> |
+<%= link_to 'Back', deliverables_path %>

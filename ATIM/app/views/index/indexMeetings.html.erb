@@ -1,0 +1,25 @@
+<%= render "layouts/headerStudent"%>
+<table  width="100%"  style="left:0px;">
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+    	<td width="20%" valign="top" align="center">
+    		<%= render "layouts/menuStudent"%>
+    	</td>
+	    <td width="75%" valign="top">
+        
+	  	</td>
+   </tr>
+</table>
+<table>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+  <tr><td colspan="2">
+    <% if flash[:notice] %>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </td></tr>
+</table>
+

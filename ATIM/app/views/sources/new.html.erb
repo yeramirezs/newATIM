@@ -1,0 +1,56 @@
+<%= render "layouts/header"%>
+</br>
+</br>
+</br>
+</br>
+<table width="100%"  style="left:0px;">
+  <tr>
+    <td width="20%" valign="top" align="center">
+      <table  style="background-color:#E6E6E6; border-radius: 15px;" width="70%">
+        <tr>
+          <td>
+            <ul class="nav nav-list">
+              <li class="nav-header">Options</li>
+              <li class="active"><%= link_to "Home", index_path(:email=>@teacher.email), :post => true%></li>
+              <li><%= link_to "Crear Tesis", new_thesis_path(:id=>@teacher.id) %></li>
+            </ul>
+          </td>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
+        </tr>
+      </table>
+    </td>
+    <td width="75%">
+      <%= stylesheet_link_tag 'sources.css', :media => 'screen' %>
+      <h2 class="center"> Nueva fuente de investigación de la tesis</h2>
+      <br/>
+      <h2 class="center"> <%= @thesis_id %> -  <%=  @thesis.title %>  </h2>
+      <br/>
+
+      <%= form_for :source, :method => :post do |f| %>
+
+        <%= f.hidden_field :thesis_id, :value=>@thesis.id %>
+        <%= f.label  :title, 'Title'  %>
+        <%= f.text_field  :title  %>
+
+        <%= f.label :url, 'URL'  %>
+        <%= f.text_field  :url  %>
+
+        <div width="50%" >
+          <%= f.label :citation, 'Citation' %>
+          <%= f.text_area :citation, :class=> 'text', :rows => 6, :cols => 25 %>
+        </div>
+
+        <%= f.hidden_field :analysis, :value=> '' %>
+
+        <%= f.submit 'Save new source' %>
+      <%end%>
+
+      <div class="link">
+        <br> <br>
+        <%= link_to 'Regresar', thesis_path(:id =>@thesis.id, :id2 =>@teacher.id), class: "btn btn-large btn-primary"%>
+      </div>
+    </td>
+  </tr>
+</table>
+
