@@ -27,16 +27,38 @@ class IndexController < ApplicationController
       redirect_to root_path
     else
       @thesis = Thesis.find(params[:id])
+      @teacher = Teacher.search(params[:email])
       if(!@thesis)
         flash[:notice] = "Tesis no valida"
         redirect_to root_path
       else
         if(@thesis.students.length==0)
           flash[:notice] = "No ha asignado estudiantes"
+          redirect_to index_path(:email=>params[:email])
         else
           @thesis.update_attribute(:state, "Activo")
+          @section1 = Section.new
+          @section1.name = 'Objetivos'
+          @section1.thesis_id = @thesis.id
+          @section2 = Section.new
+          @section2.name = 'Planteamiento del Problema'
+          @section2.thesis_id = @thesis.id
+          @section3 = Section.new
+          @section3.name = 'Estrategia'
+          @section3.thesis_id = @thesis.id
+          @section4 = Section.new
+          @section4.name = 'Implementacion'
+          @section4.thesis_id = @thesis.id
+          @section5 = Section.new
+          @section5.name = 'Conclusiones'
+          @section5.thesis_id = @thesis.id
+          @section1.save      
+          @section2.save  
+          @section3.save  
+          @section4.save  
+          @section5.save   
+          redirect_to thesis_path(:id =>@thesis.id, :id2 =>@teacher.id)
         end
-          redirect_to index_path(:email=>params[:email])
       end
     end
   end

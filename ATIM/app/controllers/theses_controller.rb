@@ -76,10 +76,12 @@ class ThesesController < ApplicationController
     @thesis = Thesis.new(params[:thesis])
     @thesis.teacher_id = @teacher.id
     @thesis.state = 'Inactiva'
+    
+
     respond_to do |format|
       if @thesis.save
-        format.html { redirect_to index_path(:email=>@teacher.email), notice: 'Thesis was successfully created.' }
-        format.json { render json: @thesis, status: :created, location: @thesis }
+          format.html { redirect_to index_path(:email=>@teacher.email), notice: 'Thesis was successfully created.'}
+          format.json { render json: @thesis, status: :created, location: @thesis }
       else
         format.html { redirect_to index_path(:email=>params[:emailTeacher]), notice: @thesis.errors.full_messages}
         format.json { render json: @thesis.errors, status: :unprocessable_entity }

@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Theses</th>
+    <th>Thesis</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +12,7 @@
 <% @sections.each do |section| %>
   <tr>
     <td><%= section.name %></td>
-    <td><%= section.theses_id %></td>
+    <td><%= section.thesis_id %></td>
     <td><%= link_to 'Show', section %></td>
     <td><%= link_to 'Edit', edit_section_path(section) %></td>
     <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>

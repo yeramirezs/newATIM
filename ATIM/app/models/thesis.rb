@@ -21,6 +21,8 @@ class Thesis < ActiveRecord::Base
 
   has_many :meeting_notes
 
+  has_many :sections
+
 
 
 
