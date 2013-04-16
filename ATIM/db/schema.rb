@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
 
   create_table "sections", :force => true do |t|
     t.string   "name"
-    t.integer  "theses_id"
+    t.integer  "thesis_id",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

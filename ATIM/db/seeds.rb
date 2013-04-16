@@ -6,10 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
   some_sources     = Source.create([
                                     {:thesis_id =>  1,
                                      :title    => "Stiglitz2012",
-                                     :citation => "The Price of Inequality: How Today's Divided Society Endangers Our Future," <<
+                                     :citation => "Stiglitz, Joseph, The Price of Inequality: How Today's Divided Society Endangers Our Future," <<
                                                   " W. W. Norton & Company.El precio de la desigualdad, Taurus, ISBN 978-84-30600694.",
                                      :url      => "http://books.wwnorton.com/books/The-Price-of-Inequality",
                                      :analysis => ""
@@ -25,7 +27,7 @@
                                     },
                                     {:thesis_id =>  1,
                                      :title    => "Gale1972",
-                                     :citation => "Pure exchange equilibrium of dynamic economic models. " <<
+                                     :citation => "Gale, Kirk, Pure exchange equilibrium of dynamic economic models. " <<
                                                   "Department of Industrial Engineering, Operations Research" <<
                                                   "University of California, Berkeley, 1972",
                                      :url      => "http://www.karlshell.com/www/pdfs/gale73.pdf",
@@ -50,9 +52,56 @@
                                     }
                                   ])
 
-  some_meetings    = Meeting.create([ {:title => "primera reunion", :fecha => "02/01/2013 8:30:00.0"},
-                                      {:title => "segunda reunion", :fecha => "03/02/2013 9:30:00.0"},
-                                      {:title => "tercera reunion", :fecha => "02/03/2013 9:30:00.0"} ])
+  some_meetings    = Meeting.create([ {:title => "Reunion inicial",           :thesis_id =>  1, :fecha => "02/01/2013 8:30:00.0"},
+                                      {:title => "Reunion de seguimiento 1",  :thesis_id =>  1, :fecha => "03/02/2013 9:30:00.0"},
+                                      {:title => "Reunion de seguimiento 2",  :thesis_id =>  1, :fecha => "02/03/2013 9:30:00.0"},
+                                      {:title => "Reunion inicial",           :thesis_id =>  2, :fecha => "02/01/2013 8:30:00.0"},
+                                      {:title => "Reunion de seguimiento 1",  :thesis_id =>  2, :fecha => "03/02/2013 9:30:00.0"},
+                                      {:title => "Reunion de seguimiento 2",  :thesis_id =>  2, :fecha => "02/03/2013 9:30:00.0"},
+                                      {:title => "Reunion inicial",           :thesis_id =>  3, :fecha => "02/01/2013 8:30:00.0"},
+                                      {:title => "Reunion de seguimiento 1",  :thesis_id =>  3, :fecha => "03/02/2013 9:30:00.0"},
+                                      {:title => "Reunion de seguimiento 2",  :thesis_id =>  3, :fecha => "02/03/2013 9:30:00.0"} ])
+
+  some_notes       = MeetingNote.create([ { :note       => "El cronograma del proyecto va atrasado en un 10%",
+                                            :thesis_id  => 1,
+                                            :meeting_id => 1
+                                          },
+                                          { :note       => "Se sugiere la practica del metodo de optimizacion de Newton",
+                                            :thesis_id  => 1,
+                                            :meeting_id => 2
+                                          },
+                                          { :note       => "Se sugiere el estudio del equilibrio dinamico de Walras\n" <<
+                                                           "Se sugiere disenar una estrategia para reducir el atraso del cronograma",
+                                            :thesis_id  => 1,
+                                            :meeting_id => 3
+                                          },
+                                          { :note       => "Se examino y aprobo el enfoque de investigacion\n" <<
+                                                           "Se identificaron los entregables de la primera etapa de la tesis"  ,
+                                            :thesis_id  => 2,
+                                            :meeting_id => 1
+                                         },
+                                          { :note       => "Se sugiere el estudio del trabajo de Hobbes",
+                                            :thesis_id  => 2,
+                                            :meeting_id => 2
+                                          },
+                                          { :note       => "Se examino el capitulo 1 presentado",
+                                            :thesis_id  => 2,
+                                            :meeting_id => 3
+                                          },
+                                          { :note       => "Se recomendo la lectura de Stigitz",
+                                            :thesis_id  => 3,
+                                            :meeting_id => 1
+                                          },
+                                          { :note       => "Se recomendo la lectura de la normatividad colombiana",
+                                            :thesis_id  => 3,
+                                            :meeting_id => 2
+                                          },
+                                          { :note       => "Se examino el problema de la crisis de 1998 y sus lecciones aprendidas",
+                                            :thesis_id  => 3,
+                                            :meeting_id => 3
+                                          }
+                                       ])
+
 
   some_commitments = Commitment.create([
                                        {
@@ -193,21 +242,132 @@
 
                     ])
 
-some_teachers =   Teacher.create([ { :name =>"ahl", :email =>"ahl@uniandes.edu.co", :created_at =>"01/04/2012", :updated_at =>"01/05/2012"}])
+some_teachers =   Teacher.create([ { :name =>"Dario Correal",    :email =>"dCorreal@uniandes.edu.co"},
+                                   { :name =>"Jorge Villalobos", :email =>"jVillalobos@uniandes.edu.co"},
+                                   { :name =>"Yezid Donoso",     :email =>"yDonoso@uniandes.edu.co"},
+                                   { :name =>"Ruby Casallas",    :email =>"rCasallas@uniandes.edu.co"}
+                                ])
 
-some_thesis =    Thesis.create([{ :title =>"El equilibrio economico dinamico",
+some_students =   Student.create([ { :name =>"Jaime Romero",    :email =>"ja.romero940@uniandes.edu.co", :thesis_id=>  1},
+                                   { :name =>"Andres Castillo", :email =>"a.castillo12@uniandes.edu.co", :thesis_id=>  2},
+                                   { :name =>"Yezid Ramirez",   :email =>"ye.ramirez26@uniandes.edu.co", :thesis_id=>  3},
+                                   { :name =>"Alvaro Lopez",    :email =>"ah.lopez10@uniandes.edu.co",   :thesis_id=>  3}
+                                ])
+
+some_thesis =    Thesis.create([{ :title       => "El equilibrio economico dinamico",
                                   :description => "Analisis del equilibrio economico desde Walras hasta los economistas actuales",
-                                  :teacher_id  => 1},
-
-                                { :title =>"Los mercados no regulados y la destrucion del tejido social",
+                                  :teacher_id  => 1
+                                },
+                                { :title       => "Los mercados no regulados y la destrucion del tejido social",
                                   :description => "Estudio sobre el efecto de la desregulacion de mercados y el aumento de la pobreza, segun Steinberg",
-                                  :teacher_id  => 1},
-
-                                { :title =>"Reactivacion economica post depresion",
-                                    :description => "La influencia del estado durante la crisis economica y su estabilizacion posterior",
-                                    :teacher_id  => 1}
-
+                                  :teacher_id  => 2
+                                },
+                                { :title       => "Reactivacion economica post depresion",
+                                  :description => "La influencia del estado durante la crisis economica y su estabilizacion posterior",
+                                  :teacher_id  => 3
+                                }
                                ])
+
+some_deliverables = Deliverable.create ([
+                                  { :title       => "Capitulo 1. El problema a resolver",
+                                    :thesis_id   => 1,
+                                    :description => "Descripcion del problema de equilibrio y de las diferentes alternativas para estudiarlo",
+                                    :file_name   => "t1-01, definicion del problema.doc"
+                                  },
+                                  { :title       => "Capitulo 2. Descripcion de una economia en equilibrio dinamico",
+                                    :thesis_id   => 1,
+                                    :description => "Estudio sobre el efecto de la desregulacion de mercados y el aumento de la pobreza, segun Steinberg",
+                                    :file_name   => "t1-02, equilibrio dinamico, perspectiva historica.doc"
+                                  },
+                                  { :title       => "Capitulo 3. Modelo de equilibrio propuesto",
+                                    :thesis_id   => 1,
+                                    :description => "Modelo de equilibrio, convergencia de oferta y demanda bajo precios inestables",
+                                    :file_name   => "t1-03, Modelo de equilibrio dinamico y su estabilidad.doc"
+                                  },
+                                  { :title       => "Capitulo 4. Controlabilidad del modelo",
+                                    :thesis_id   => 1,
+                                    :description => "Controlabilidad del modelo ante diferentes escenarios de parametros de entrada y situacion inicial",
+                                    :file_name   => "t1-04, El modelo y su controlabilidad. Los parametros de control.doc"
+                                  },
+                                  { :title       => "Capitulo 1. Informacion requerida para tomar decisiones microeconomicas",
+                                    :thesis_id   => 2,
+                                    :description => "La informacion para tomar decisiones y su disponibilidad",
+                                    :file_name   => "t2-01, las decisiones se toman con informacion, quien la tiene.doc"
+                                  },
+                                  { :title       => "Capitulo 2. Los efectos perversos de las asimetrias de informacion",
+                                    :thesis_id   => 2,
+                                    :description => "Efecto de la asimetria de informacion sobre la distribucion de riqueza",
+                                    :file_name   => "t2-02, acceso a la informacion, efectos de la asimetria.doc"
+                                  },
+                                  { :title       => "Capitulo 3. Impacto sobre la sociedad de la asimetria de informacion",
+                                    :thesis_id   => 2,
+                                    :description => "Los efectos visibles de la asimetria de informacion",
+                                    :file_name   => "t2-03, La concentracion de riqueza por efecto de la asimetria de informacion.doc"
+                                  },
+                                  { :title       => "Capitulo 4. Accion del estado",
+                                    :thesis_id   => 2,
+                                    :description => "Necesidades de intervencion del estado para corregir las asimetrias de informacion",
+                                    :file_name   => "t2-04, La correccion de las asimetrias de infomacion.doc"
+                                  },
+                                  { :title       => "Capitulo 1. Efectos de la recesion economica",
+                                    :thesis_id   => 3,
+                                    :description => "Efectos de la depresion economica sobre la generacion de empleo y atencion de servicios sociales",
+                                    :file_name   => "t3-01, dimensionamiento del dano de la depresion economica.doc"
+                                  },
+                                  { :title       => "Capitulo 2. Medidas necesarias para reactivar la economia",
+                                    :thesis_id   => 3,
+                                    :description => "Identificacion de las alternativas para reactivar la economia",
+                                    :file_name   => "t3-02, alternativas para reactivacion de la economia.doc"
+                                  }
+                                ])
+
+some_recomendations = Recommendation.create ([
+                                  { :recommendation => "Debe profundizar en los metodos numericos requeridos para la solucion del problema de equilibrio",
+                                    :thesis_id      => 1,
+                                    :created        => "01/04/2013"
+                                  },
+                                  { :recommendation => "Debe explicar mejor por que las asimetrias de informacion generan polarizacion social",
+                                    :thesis_id      => 2,
+                                    :created        => "02/04/2013"
+                                  },
+                                  { :recommendation => "Debe explicar mejor los posibles beneficios y costos de cada accion propuesta para la reactivacion de la economia",
+                                    :thesis_id      => 3,
+                                    :created        => "02/04/2013"
+                                  }
+                                 ])
+
+
+some_sections = Section.create ([
+                                { :name =>"Capitulo 1. Definicion del problema de equilibrio",           :thesis_id => 1},
+                                { :name =>"Capitulo 2. No linearidad del problema",                      :thesis_id => 1},
+                                { :name =>"Capitulo 3. Problemas de convergencia",                       :thesis_id => 1},
+                                { :name =>"Capitulo 4. Solucion por el metodo del sandwich",             :thesis_id => 1},
+                                { :name =>"Capitulo 1. Resena historica del progreso de la clase media", :thesis_id => 2},
+                                { :name =>"Capitulo 2. La riqueza moderna esta ligada a la informacion", :thesis_id => 2},
+                                { :name =>"Capitulo 3. El impacto de las asimetrias de informacion",     :thesis_id => 2},
+                                { :name =>"Capitulo 4. La necesidad de intervencion del estado",         :thesis_id => 2},
+                                { :name =>"Capitulo 1. Paralisis de la industria",                       :thesis_id => 3},
+                                { :name =>"Capitulo 2. Inflacion desbocada",                             :thesis_id => 3},
+                                { :name =>"Capitulo 3. Medidas financieras y fiscales urgentes",         :thesis_id => 3},
+                                { :name =>"Capitulo 4. Casos de estudio",                                :thesis_id => 3}
+                               ])
+
+
+some_books =   Book.create([ { :author =>"Stiglitz, Joseph", :name =>"The Price of Inequality: How Today's Divided Society Endangers Our Future"},
+                             { :author =>"Walras Leon",      :name =>"Estudios de Economia Social, Segunda Seccion, dinamica del equilibrio economico"},
+                             { :author =>"Gale, Kirk",       :name =>"Pure exchange equilibrium of dynamic economic models"},
+                             { :author =>"Debreau, Jack",    :name =>"Theory of Value: An Axiomatic Analysis of Economic Equilibrium"}
+                          ])
+
+
+
+
+
+
+
+
+
+
 
 
 
