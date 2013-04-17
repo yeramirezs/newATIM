@@ -13,7 +13,7 @@
 		    <li class="<%= (request.url.include? "entregas") ? "active" : "" %>"><%= link_to "Entregables de Tesis", indexDeliverable_path(:email=>@student.email) %></li>
 		    <li class="divider"></li>
 		    <% @thesis.sections.each do |section| %>
-			<li class="<%= (request.url.include? "entregas") ? "active" : "" %>"><%= link_to section.name, indexDeliverable_path(:email=>@student.email) %></li>
+			<li class="<%= (request.url.include? "sections" and request.url.include? "/"+section.id.to_s ) ? "active" : "" %>"><%= link_to section.name, section_path(:id =>section.id,:email=>@student.email) %></li>
 			<% end %>
 		    </ul>
 		</td>
