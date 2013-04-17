@@ -1,5 +1,8 @@
 ATIM::Application.routes.draw do
 
+  resources :subsections
+
+
   resources :sections
 
 
