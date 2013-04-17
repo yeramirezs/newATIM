@@ -59,7 +59,15 @@ class IndexController < ApplicationController
           @section2.save  
           @section3.save  
           @section4.save  
-          @section5.save   
+          @section5.save
+
+          @subsection1 = Subsection.new
+          @subsection1.name = 'Objetivos Generales'
+          @subsection1.description = 'Objetivos que persigue el proyecto de grado de forma global'
+          @subsection1.thesis_id = @thesis.id
+          @subsection1.section_id = @section1.id
+          @subsection1.save
+
           redirect_to thesis_path(:id =>@thesis.id, :id2 =>@teacher.id)
         end
       end
