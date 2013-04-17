@@ -4,11 +4,11 @@
     <list default="true" id="31e2fc34-aab6-435e-8c37-4fe3a390bff8" name="Default" comment="" />
     <ignored path="ATIM.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Ruby Console" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362277660406" ignored="false" />
-    <file path="/ListCommitments.feature" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362316978969" ignored="false" />
-    <file path="/Gemfile" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362310722823" ignored="false" />
-    <file path="/steps.rb" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362316955432" ignored="false" />
     <file path="/Dummy.txt" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362317926556" ignored="false" />
+    <file path="/steps.rb" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362316955432" ignored="false" />
+    <file path="/Gemfile" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362310722823" ignored="false" />
+    <file path="/ListCommitments.feature" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362316978969" ignored="false" />
+    <file path="/Ruby Console" changelist="31e2fc34-aab6-435e-8c37-4fe3a390bff8" time="1362277660406" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +33,43 @@
       <file leaf-file-name="meeting_notes_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/meeting_notes_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="83" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0">
+            <state line="55" column="83" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/theses/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="142" selection-start="4877" selection-end="4877" vertical-scroll-proportion="-1.3076923">
+            <state line="130" column="43" selection-start="5410" selection-end="5410" vertical-scroll-proportion="0.59375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meetings_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="meetings_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/meetings_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="83" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.4680851">
+            <state line="52" column="83" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="11" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/index_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="66" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -60,7 +78,7 @@
       <file leaf-file-name="commitments_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/commitments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="83" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
+            <state line="51" column="83" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20130325231804_create_meetings.rb" />
         <option value="$PROJECT_DIR$/app/models/commitment.rb" />
         <option value="$PROJECT_DIR$/db/migrate/create_class_notes.rb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
@@ -105,8 +122,9 @@
         <option value="$PROJECT_DIR$/app/controllers/theses_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/meeting_notes_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/commitments_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/theses/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/meetings_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/theses/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -149,8 +167,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,11 +223,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,6 +281,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ATIM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ATIM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -307,20 +341,22 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Rails.Development: ATIM">
     <configuration default="false" name="db:create" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -661,14 +697,14 @@
       <method />
     </configuration>
     <list size="8">
-      <item index="0" class="java.lang.String" itemvalue="Rails.Production: ATIM" />
-      <item index="1" class="java.lang.String" itemvalue="Rails.Development: ATIM" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.db:create" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.db:seed" />
-      <item index="7" class="java.lang.String" itemvalue="IRB console.IRB console" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.db:create" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.db:seed" />
+      <item index="2" class="java.lang.String" itemvalue="IRB console.IRB console" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Production: ATIM" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Development: ATIM" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="7" class="java.lang.String" itemvalue="Rake.db:migrate" />
     </list>
     <recent_temporary>
       <list size="4">
@@ -735,11 +771,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908458" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291874" sideWeight="0.67207414" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24015151" sideWeight="0.65953946" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2439394" sideWeight="0.6611842" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291874" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270142" sideWeight="0.4978038" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34046054" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33881578" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -804,16 +840,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20130325231804_create_meetings.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="147" selection-end="188" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/teacher.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/meeting.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="25" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" />
@@ -826,70 +852,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/meeting_note.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130326051754_create_meeting_notes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="5" column="46" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130220171938_create_commitments.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/theses_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="3893" selection-end="3893" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="137" column="0" selection-start="3893" selection-end="3893" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/robots.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/meeting_notes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="83" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/theses/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="142" selection-start="4877" selection-end="4877" vertical-scroll-proportion="-1.3076923">
+        <state line="55" column="83" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/commitments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="83" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
+        <state line="51" column="83" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -903,7 +908,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/meetings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="83" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.4680851">
+        <state line="52" column="83" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/index_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="66" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="11" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/theses/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="43" selection-start="5410" selection-end="5410" vertical-scroll-proportion="0.59375">
           <folding />
         </state>
       </provider>
