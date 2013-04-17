@@ -52,6 +52,9 @@ class IndexController < ApplicationController
           @section5 = Section.new
           @section5.name = 'Conclusiones'
           @section5.thesis_id = @thesis.id
+          @section6 = Section.new
+          @section6.name = 'Otros'
+          @section6.thesis_id = @thesis.id
           @section1.save      
           @section2.save  
           @section3.save  

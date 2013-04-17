@@ -14,6 +14,8 @@ class SectionsController < ApplicationController
   # GET /sections/1.json
   def show
     @section = Section.find(params[:id])
+    @student = Student.search(params[:email])
+    @thesis = Thesis.find(@student.thesis_id)
 
     respond_to do |format|
       format.html # show.html.erb
