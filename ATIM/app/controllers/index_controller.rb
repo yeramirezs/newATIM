@@ -68,6 +68,41 @@ class IndexController < ApplicationController
           @subsection1.section_id = @section1.id
           @subsection1.save
 
+          @subsection2 = Subsection.new
+          @subsection2.name = 'Objetivos Especificos'
+          @subsection2.description = 'Los objetivos especificos de un proyecto de grado precisan requerimientos o propositos en orden a la naturaleza de la investigacion y tienen como orientacion el objetivo general.'
+          @subsection2.thesis_id = @thesis.id
+          @subsection2.section_id = @section1.id
+          @subsection2.save
+
+          @subsection3 = Subsection.new
+          @subsection3.name = 'Problema de Tesis'
+          @subsection3.description = ''
+          @subsection3.thesis_id = @thesis.id
+          @subsection3.section_id = @section2.id
+          @subsection3.save
+
+          @subsection3 = Subsection.new
+          @subsection3.name = 'Hipotesis'
+          @subsection3.description = ''
+          @subsection3.thesis_id = @thesis.id
+          @subsection3.section_id = @section2.id
+          @subsection3.save
+
+          @subsection3 = Subsection.new
+          @subsection3.name = 'Preguntas de investigacion'
+          @subsection3.description = ''
+          @subsection3.thesis_id = @thesis.id
+          @subsection3.section_id = @section2.id
+          @subsection3.save
+
+          @subsection3 = Subsection.new
+          @subsection3.name = 'Sustentacion del problema de tesis'
+          @subsection3.description = ''
+          @subsection3.thesis_id = @thesis.id
+          @subsection3.section_id = @section2.id
+          @subsection3.save
+
           redirect_to thesis_path(:id =>@thesis.id, :id2 =>@teacher.id)
         end
       end
