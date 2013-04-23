@@ -77,31 +77,66 @@ class IndexController < ApplicationController
 
           @subsection3 = Subsection.new
           @subsection3.name = 'Problema de Tesis'
-          @subsection3.description = ''
+          @subsection3.description = 'Descripcion del problema que se quiere solucionar a traves del proyecto de grado'
           @subsection3.thesis_id = @thesis.id
           @subsection3.section_id = @section2.id
           @subsection3.save
 
-          @subsection3 = Subsection.new
-          @subsection3.name = 'Hipotesis'
-          @subsection3.description = ''
-          @subsection3.thesis_id = @thesis.id
-          @subsection3.section_id = @section2.id
-          @subsection3.save
+          @subsection4 = Subsection.new
+          @subsection4.name = 'Hipotesis'
+          @subsection4.description = ''
+          @subsection4.thesis_id = @thesis.id
+          @subsection4.section_id = @section2.id
+          @subsection4.save
 
-          @subsection3 = Subsection.new
-          @subsection3.name = 'Preguntas de investigacion'
-          @subsection3.description = ''
-          @subsection3.thesis_id = @thesis.id
-          @subsection3.section_id = @section2.id
-          @subsection3.save
+          @subsection5 = Subsection.new
+          @subsection5.name = 'Preguntas de investigacion'
+          @subsection5.description = ''
+          @subsection5.thesis_id = @thesis.id
+          @subsection5.section_id = @section2.id
+          @subsection5.save
 
-          @subsection3 = Subsection.new
-          @subsection3.name = 'Sustentacion del problema de tesis'
-          @subsection3.description = ''
-          @subsection3.thesis_id = @thesis.id
-          @subsection3.section_id = @section2.id
-          @subsection3.save
+          @subsection6 = Subsection.new
+          @subsection6.name = 'Sustentacion del problema de tesis'
+          @subsection6.description = 'Relevancia y pertinencia del problema propuesto.'
+          @subsection6.thesis_id = @thesis.id
+          @subsection6.section_id = @section2.id
+          @subsection6.save
+
+          @subsection7 = Subsection.new
+          @subsection7.name = 'Estrategia de solucion'
+          @subsection7.description = 'Estrategia propuesta para la solucion del problema'
+          @subsection7.thesis_id = @thesis.id
+          @subsection7.section_id = @section3.id
+          @subsection7.save
+
+          @subsection8 = Subsection.new
+          @subsection8.name = 'Entregables de implementacion'
+          @subsection8.description = 'Documentos y software para implementar la solución propuesta'
+          @subsection8.thesis_id = @thesis.id
+          @subsection8.section_id = @section4.id
+          @subsection8.save
+
+          @subsection9 = Subsection.new
+          @subsection9.name = 'Conclusiones'
+          @subsection9.description = 'Conclusiones del trabaja desarrollado'
+          @subsection9.thesis_id = @thesis.id
+          @subsection9.section_id = @section5.id
+          @subsection9.save
+
+          @subsection10 = Subsection.new
+          @subsection10.name = 'Trabajo Futuro'
+          @subsection10.description = 'Trabajo para desarrollar en un futuro'
+          @subsection10.thesis_id = @thesis.id
+          @subsection10.section_id = @section5.id
+          @subsection10.save
+
+          @subsection11 = Subsection.new
+          @subsection11.name = 'Otros artefactos'
+          @subsection11.description = 'Otros artefactos desarrollados para el proyecto de grado'
+          @subsection11.thesis_id = @thesis.id
+          @subsection11.section_id = @section6.id
+          @subsection11.save
 
           redirect_to thesis_path(:id =>@thesis.id, :id2 =>@teacher.id)
         end
