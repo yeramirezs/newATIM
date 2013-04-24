@@ -91,7 +91,7 @@ class IndexController < ApplicationController
 
           @subsection5 = Subsection.new
           @subsection5.name = 'Preguntas de investigacion'
-          @subsection5.description = ''
+          @subsection5.description = 'Preguntas que quiere responder a traves del proyecto de grado'
           @subsection5.thesis_id = @thesis.id
           @subsection5.section_id = @section2.id
           @subsection5.save
