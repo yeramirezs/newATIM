@@ -84,7 +84,7 @@ class IndexController < ApplicationController
 
           @subsection4 = Subsection.new
           @subsection4.name = 'Hipotesis'
-          @subsection4.description = ''
+          @subsection4.description = 'Posible solución del problema que se esta trantando'
           @subsection4.thesis_id = @thesis.id
           @subsection4.section_id = @section2.id
           @subsection4.save
