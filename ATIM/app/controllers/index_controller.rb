@@ -60,6 +60,7 @@ class IndexController < ApplicationController
           @section3.save  
           @section4.save  
           @section5.save
+          @section6.save
 
           @subsection1 = Subsection.new
           @subsection1.name = 'Objetivos Generales'
