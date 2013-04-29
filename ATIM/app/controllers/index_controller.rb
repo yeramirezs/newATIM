@@ -84,7 +84,7 @@ class IndexController < ApplicationController
 
           @subsection4 = Subsection.new
           @subsection4.name = 'Hipotesis'
-          @subsection4.description = 'Posible solución del problema que se esta trantando'
+          @subsection4.description = 'Posible solucion del problema que se esta trantando'
           @subsection4.thesis_id = @thesis.id
           @subsection4.section_id = @section2.id
           @subsection4.save
@@ -112,7 +112,7 @@ class IndexController < ApplicationController
 
           @subsection8 = Subsection.new
           @subsection8.name = 'Entregables de implementacion'
-          @subsection8.description = 'Documentos y software para implementar la solución propuesta'
+          @subsection8.description = 'Documentos y software para implementar la solucion propuesta'
           @subsection8.thesis_id = @thesis.id
           @subsection8.section_id = @section4.id
           @subsection8.save
