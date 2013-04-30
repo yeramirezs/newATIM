@@ -160,6 +160,8 @@ class IndexController < ApplicationController
     @student = Student.search(params[:email])
     @thesis = Thesis.find(@student.thesis_id)
     @sources   = Source.where( @thesis_id).sort_by( &:title)
+    @sections = Section.find_all_by_thesis_id(@thesis.id)
+    @subsections = Subsection.find_all_by_thesis_id(@thesis.id)
   end
 
   def commitments 

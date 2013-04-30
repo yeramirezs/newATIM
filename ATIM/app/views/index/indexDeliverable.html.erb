@@ -35,10 +35,30 @@
                           <%= f.file_field :file, :placeholder => 'File' %>
                         </div>
                         </br>
+                        <div class="field">
+                          <select id="thesis_id" name="thesis_id">
+                            <option selected="selected" disabled="disabled">
+                              Select section
+                            </option>
+                            <% @sections.each do |section|
+                            %><optgroup label="<%= section.name %>">
+                                <% @subsections.each do |subsection|
+                                  if subsection.section_id == section.id
+                                %>
+                                        <option value="<%= subsection.id %>"><%= subsection.name %></option>
+                                    <% end
+                                       end %>
+                                </optgroup>
+                            <% end %>
+                          </select>
+                        </div>
+                        </br>
                         <div class="actions">
                           <%= f.submit "Enviar", class: "btn"%>
                         </div>
-                    <% end %>
+
+
+                  <% end %>
                   </tr>
                 </table>
             </div>
