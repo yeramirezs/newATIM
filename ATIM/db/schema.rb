@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417151922) do
+ActiveRecord::Schema.define(:version => 20130414231105) do
 
   create_table "books", :force => true do |t|
     t.string   "author"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20130417151922) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "meeting_resources", :force => true do |t|
+    t.integer  "thesis_id"
+    t.integer  "meeting_id"
+    t.string   "description"
+    t.string   "file_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+
   create_table "recommendations", :force => true do |t|
     t.string   "recommendation"
     t.integer  "thesis_id"
@@ -64,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20130417151922) do
 
   create_table "sections", :force => true do |t|
     t.string   "name"
-    t.integer  "thesis_id"
+    t.integer  "thesis_id",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -83,15 +93,6 @@ ActiveRecord::Schema.define(:version => 20130417151922) do
     t.integer  "thesis_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "subsections", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "thesis_id"
-    t.integer  "section_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "teachers", :force => true do |t|
