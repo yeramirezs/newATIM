@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
   end
 
 
+
   create_table "recommendations", :force => true do |t|
     t.string   "recommendation"
     t.integer  "thesis_id"
