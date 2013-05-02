@@ -2,7 +2,7 @@ class Deliverable < ActiveRecord::Base
 
   validates_presence_of :thesis_id, :title
 
-  attr_accessible :description, :file, :thesis_id, :title, :file_name
+  attr_accessible :description, :file, :thesis_id, :subsection_id, :title, :file_name
 
   has_attached_file :file, :url => "/files/deliverables/:basename.:extension",
                     :path => ":rails_root/public/files/deliverables/:basename.:extension",
