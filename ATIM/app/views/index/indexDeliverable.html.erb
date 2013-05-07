@@ -63,17 +63,23 @@
                 </table>
             </div>
             <div class="tab-pane" id="tab2">
-              <table>
-                <% @thesis.deliverables.each do |deliverable| %>
-                    <tr>
-                      <td><i>El <%= deliverable.created_at  %></i>:<br /><%= deliverable.title %></td>
-                    </tr>
-                    <tr>
-                      <td>Archivo:<br /><a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank">Ver archivo</a></td>
+              <div style="">
 
-                    </tr>
+                <% @thesis.deliverables.each do |deliverable| %>
+                    <div style="background-color:#cccccc; margin:5px 10px; padding: 5px;">
+                    Título: <%= deliverable.title %> <span style="color: #fff; font-size: 10px; font-style: italic;">Entregable del <%= deliverable.created_at  %></span><br>
+                    Descripción: <%= deliverable.description %><br>
+                    Archivo:<a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank">Ver archivo</a><br>
+                    <% @subsections.each do |subsection|
+                         if (subsection.id == deliverable.subsection_id)
+                    %>
+                         Subsección: <%= subsection.name %>
+                    <%   end
+                       end %>
+
+                    </div>
                 <% end %>
-              </table>
+              </div>
             </div>
             </div>
           </div>
