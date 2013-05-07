@@ -261,14 +261,17 @@ some_students =   Student.create([ { :name =>"Jaime Romero",    :email =>"ja.rom
 some_thesis =    Thesis.create([{ :title       => "El equilibrio economico dinamico",
                                   :description => "Analisis del equilibrio economico desde Walras hasta los economistas actuales",
                                   :teacher_id  => 1
+                                  :state => "Inactiva"
                                 },
                                 { :title       => "Los mercados no regulados y la destrucion del tejido social",
                                   :description => "Estudio sobre el efecto de la desregulacion de mercados y el aumento de la pobreza, segun Steinberg",
                                   :teacher_id  => 2
+                                  :state => "Inactiva"
                                 },
                                 { :title       => "Reactivacion economica post depresion",
                                   :description => "La influencia del estado durante la crisis economica y su estabilizacion posterior",
                                   :teacher_id  => 3
+                                  :state => "Inactiva"
                                 }
                                ])
 
@@ -339,23 +342,6 @@ some_recomendations = Recommendation.create ([
                                     :created        => "02/04/2013"
                                   }
                                  ])
-
-
-some_sections = Section.create ([
-                                { :name =>"Capitulo 1. Definicion del problema de equilibrio",           :thesis_id => 1},
-                                { :name =>"Capitulo 2. No linearidad del problema",                      :thesis_id => 1},
-                                { :name =>"Capitulo 3. Problemas de convergencia",                       :thesis_id => 1},
-                                { :name =>"Capitulo 4. Solucion por el metodo del sandwich",             :thesis_id => 1},
-                                { :name =>"Capitulo 1. Resena historica del progreso de la clase media", :thesis_id => 2},
-                                { :name =>"Capitulo 2. La riqueza moderna esta ligada a la informacion", :thesis_id => 2},
-                                { :name =>"Capitulo 3. El impacto de las asimetrias de informacion",     :thesis_id => 2},
-                                { :name =>"Capitulo 4. La necesidad de intervencion del estado",         :thesis_id => 2},
-                                { :name =>"Capitulo 1. Paralisis de la industria",                       :thesis_id => 3},
-                                { :name =>"Capitulo 2. Inflacion desbocada",                             :thesis_id => 3},
-                                { :name =>"Capitulo 3. Medidas financieras y fiscales urgentes",         :thesis_id => 3},
-                                { :name =>"Capitulo 4. Casos de estudio",                                :thesis_id => 3}
-                               ])
-
 
 some_books =   Book.create([ { :author =>"Stiglitz, Joseph", :name =>"The Price of Inequality: How Today's Divided Society Endangers Our Future"},
                              { :author =>"Walras Leon",      :name =>"Estudios de Economia Social, Segunda Seccion, dinamica del equilibrio economico"},
