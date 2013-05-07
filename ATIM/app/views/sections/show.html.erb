@@ -10,6 +10,31 @@
     	</td>
 	    <td width="75%" valign="top">
         	<h2><%=@section.name %></h2>
+          <br>
+          <% @section.subsections.each do |sub| %>
+            <h3><%= sub.name %></h3>
+            <i><%= sub.description %></i></br>
+            <table id="report" width="55%">
+                <tr></tr>
+                  <% sub.deliverables do |d| %>
+                  <tr>
+                      <td><%= d.title %></td>
+                      <td align="right"><div class="arrow"></div></td>
+                  </tr>
+                  <tr>
+                      <td colspan="5">
+                          <ul>
+                              <h4>Descripcion</h4><%= d.description %></br> 
+                           </ul> 
+                            <ul>
+                            <h4>Archivo:</h4><a href="/files/deliverables/<%= d.file_name %>" target="_blank">Ver archivo</a><br> 
+                           </ul> 
+                      </td>
+                  </tr>
+                 <% end %>
+              </table>
+          <% end %>
+
 	  	</td>
    </tr>
 </table>
