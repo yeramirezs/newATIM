@@ -62,6 +62,10 @@
                                       {:title => "Reunion de seguimiento 1",  :thesis_id =>  3, :fecha => "03/02/2013 9:30:00.0"},
                                       {:title => "Reunion de seguimiento 2",  :thesis_id =>  3, :fecha => "02/03/2013 9:30:00.0"} ])
 
+  some_meeting_resources = MeetingResource.create([ { :thesis_id => 1, :meeting_id => 7, :description => "reunion 1, recurso 1", :file_name => "seguridad, the inevitability of failure.pdf"},
+                                                    { :thesis_id => 1, :meeting_id => 7, :description => "reunion 1, recurso 2", :file_name => "Tulips.jpg"}
+                                                  ])
+
   some_notes       = MeetingNote.create([ { :note       => "El cronograma del proyecto va atrasado en un 10%",
                                             :thesis_id  => 1,
                                             :meeting_id => 1

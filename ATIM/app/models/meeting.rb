@@ -3,5 +3,6 @@ class Meeting < ActiveRecord::Base
   validates_presence_of :title, :fecha, :thesis_id
   has_many :commitments
   has_many :meeting_notes
+  has_many :meeting_resources
 
 end

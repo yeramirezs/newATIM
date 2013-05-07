@@ -29,24 +29,28 @@
                           <li class="active"><a href="#tab1" data-toggle="tab">Agregar una nueva nota</a></li>
                           <li><a href="#tab2" data-toggle="tab">Listar notas</a></li>
                           <li><a href="#tab3" data-toggle="tab">Listar compromisos</a></li>
+                          <li><a href="#tab4" data-toggle="tab">Adicionar recursos</a></li>
+                          <li><a href="#tab5" data-toggle="tab">Listar recursos</a></li>
                           </ul>
                           <div class="tab-content">
-                          <div class="tab-pane active" id="tab1">
-                            <%= form_for @meeting_note, :url=>{:thesis_id=>@thesis, :idMeeting=>c, :email=>@student.email, :controller=>"meeting_notes", :action=>"create"}, :method => "post" do |f| %>
-                            <h4>Notas de Reunion</h4>
-                             <%= f.text_area :note, :placeholder => 'Note', :class=>"text", :rows => 8, :cols => 20 %>
-                           </br>
-                             <%= f.submit  "Update notes", :class => "btn" %>
-                            <%end%>
-                          </div>
-                          <div class="tab-pane" id="tab2">
+                            <div class="tab-pane active" id="tab1">
+                              <%= form_for @meeting_note, :url=>{:thesis_id=>@thesis_id, :idMeeting=>c, :email=>@student.email, :controller=>"meeting_notes", :action=>"create"}, :method => "post" do |f| %>
+                              <h4>Notas de Reunion</h4>
+                              <%= f.text_area :note, :placeholder => 'Note', :class=>"text", :rows => 8, :cols => 20 %>
+                              </br>
+                              <%= f.submit  "Update notes", :class => "btn" %>
+                              <%end%>
+                            </div>
+                            <div class="tab-pane" id="tab2">
                                 <% c.meeting_notes.each do |n| %>
     
                                 <p> <b>Nota: </b><%= n.note %></p>
                                 
                                <% end %>
-                          </div>
-                          <div class="tab-pane" id="tab3">
+                            </div>
+
+
+                            <div class="tab-pane" id="tab3">
                               <b>Commitments List</b>
                               <table width="100%">
                                 <% @commitments = Commitment.find_all_by_meeting_id(c) %>
@@ -61,7 +65,35 @@
                                   </tr>
                                 <%end%> 
                               </table>
-                          </div>
+                            </div>
+
+                            <div class="tab-pane" id="tab4">
+
+                              <%= form_tag({:controller=> :meeting_resource, :action => :upload, :thesis_id=>@thesis_id, :meeting_id=>c.id, :email=>@student.email}, :multipart => true) do %>
+                                  <ul><b>Descripción</b><%= text_field_tag 'descripcion'   %></ul> <br>
+                                  <%= file_field_tag 'recurso' %>  <br><br>
+                                  <%= submit_tag "Cargar recurso" %>
+                              <% end %>
+
+                            </div>
+
+
+                            <div class="tab-pane" id="tab5">
+                              <b>Meeting Resource List</b>
+                              <table width="100%">
+                                <% @mresources = MeetingResource.find_all_by_meeting_id(c) %>
+                                <% @mresources.each do |mresource| %>
+                                    <tr>
+                                      <td><i>El <%= mresource.created_at  %></i>:<br /><%= mresource.description %></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Archivo:<br /><a href="/files/resources/<%= mresource.file_name %>" target="_blank">Ver archivo</a></td>
+
+                                    </tr>
+                                <% end %>
+                              </table>
+                            </div>
+
                           </div>
                         </div>
                      </ul>   

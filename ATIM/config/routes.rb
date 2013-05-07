@@ -1,5 +1,8 @@
 ATIM::Application.routes.draw do
 
+  post "meeting_resource/upload"   => "meeting_resource#upload"
+  get  "meeting_resource/list"     => "meeting_resource#list"
+
   resources :resources
 
 

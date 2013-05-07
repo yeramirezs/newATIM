@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414231105) do
+ActiveRecord::Schema.define(:version => 20130502180452) do
 
   create_table "books", :force => true do |t|
     t.string   "author"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
     t.integer  "thesis_id"
     t.string   "description"
     t.string   "file_name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "subsection_id"
   end
 
   create_table "meeting_notes", :force => true do |t|
@@ -46,6 +47,15 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "meeting_resources", :force => true do |t|
+    t.integer  "thesis_id",   :null => false
+    t.integer  "meeting_id",  :null => false
+    t.string   "description", :null => false
+    t.string   "file_name",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "meetings", :force => true do |t|
     t.string   "title",      :null => false
     t.integer  "thesis_id",  :null => false
@@ -54,23 +64,21 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "meeting_resources", :force => true do |t|
-    t.integer  "thesis_id"
-    t.integer  "meeting_id"
-    t.string   "description"
-    t.string   "file_name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-
-
   create_table "recommendations", :force => true do |t|
     t.string   "recommendation"
     t.integer  "thesis_id"
     t.date     "created"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "title"
+    t.string   "file"
+    t.integer  "section_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sections", :force => true do |t|
@@ -94,6 +102,15 @@ ActiveRecord::Schema.define(:version => 20130414231105) do
     t.integer  "thesis_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "subsections", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "thesis_id"
+    t.integer  "section_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "teachers", :force => true do |t|
