@@ -16,7 +16,8 @@
             <i><%= sub.description %></i></br>
             <table id="report" width="55%">
                 <tr></tr>
-                  <% sub.deliverables do |d| %>
+                  <% @deliverables = Deliverable.find_all_by_subsection_id(sub.id) %>
+                  <% @deliverables.each do |d| %>
                   <tr>
                       <td><%= d.title %></td>
                       <td align="right"><div class="arrow"></div></td>
@@ -47,3 +48,17 @@
     <% end %>
   </td></tr>
 </table>
+
+<script type="text/javascript">  
+    $(document).ready(function(){
+        $("#report tr:odd").addClass("odd");
+        $("#report tr:not(.odd)").hide();
+        $("#report tr:first-child").show();
+        
+        $("#report tr.odd").click(function(){
+            $(this).next("tr").toggle();
+            $(this).find(".arrow").toggleClass("up");
+        });
+        //$("#report").jExpand();
+    });
+</script> 
