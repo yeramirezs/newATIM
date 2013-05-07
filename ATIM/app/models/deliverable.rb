@@ -17,4 +17,6 @@ class Deliverable < ActiveRecord::Base
 
   belongs_to :thesis
 
+  belongs_to :subsection
+
 end
