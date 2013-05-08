@@ -3,4 +3,5 @@ class Subsection < ActiveRecord::Base
 
   belongs_to :thesis
   belongs_to :section
+  has_many :deliverables
 end

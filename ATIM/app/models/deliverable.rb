@@ -15,6 +15,9 @@ class Deliverable < ActiveRecord::Base
 
   validates_attachment_size :file, :less_than => 32.megabytes
 
+  belongs_to :subsection
   belongs_to :thesis
+
+
 
 end
