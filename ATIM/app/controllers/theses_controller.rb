@@ -28,6 +28,7 @@ class ThesesController < ApplicationController
     @student = Student.new
     @meeting = Meeting.new
     @meetings = Meeting.find_all_by_thesis_id(@thesis)
+    @subsections = Subsection.find_all_by_thesis_id(@thesis)
     @commitment = Commitment.new
     @commitments = Commitment.find_all_by_meeting_id(@meeting)
     @meeting_note = MeetingNote.new

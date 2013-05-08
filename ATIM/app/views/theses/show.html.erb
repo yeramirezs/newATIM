@@ -238,7 +238,11 @@
                       <table>
                             <% @thesis.deliverables.each do |deliverable| %>
                             <tr>
-                              <td>El <i><%= deliverable.created_at  %></i> el estudiante entregó: <a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank"><%= deliverable.title %></a></td>
+                              <td>De <strong><% @subsections.each do |subsection|
+                                if (subsection.id == deliverable.subsection_id)
+                              %><%= subsection.name %><%   end
+                                         end %></strong><br>
+                                &nbsp; &nbsp; El <i><%= deliverable.created_at  %></i> el estudiante entregó: <a href="/files/deliverables/<%= deliverable.file_name %>" target="_blank"><%= deliverable.title %></a></td>
                             </tr>
                           <% end %>
                       </table>
