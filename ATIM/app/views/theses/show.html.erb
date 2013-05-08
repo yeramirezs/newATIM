@@ -1,4 +1,11 @@
 <%= render "layouts/header"%>
+
+<style>
+.fechabien select{width: 70px; font-size: 12px}
+.latabla td{width: 100px; padding: 3px; border:solid 1px #fff;}
+.latabla td.lefttd{width: 300px; padding: 3px; border:solid 1px #fff;}
+</style>
+
 <table width="100%" align="left">
 	<tr><td>&nbsp;</td></tr>
 	<tr><td>&nbsp;</td></tr>
@@ -95,20 +102,21 @@
 									  </div>
 									<% end %>
 								    <b>Lista de estudiantes</b>
+                  <div class="latabla">
 								    <table>
 								    	<tr>
-										    <td><b>Nombre Estudiante</b></td>
-										    <td width="10px"></td>
-										    <td><b>Email Estudiante</b></td>
+										    <td class="lefttd"><b>Nombre Estudiante</b></td>
+										    
+										    <td class="lefttd"><b>Email Estudiante</b></td>
 										  </tr>
 									    <% @thesis.students.each do |student| %>
 										  <tr>
-										    <td><%= student.name %></td>
-										    <td width="10px"></td>
-										    <td><%= student.email %></td>
+										    <td class="lefttd"><%= student.name %></td>
+										    <td class="lefttd"><%= student.email %></td>
 										  </tr>
 										<% end %>
 									</table>
+                </div>
 							    </div>
                   <div class="tab-pane" id="tab3">
                     <b>Nueva reunion.</b>
@@ -127,29 +135,31 @@
                         <div class="field">
                           <%= f.text_field :title, :placeholder => 'Title' %>
                         </div>
-                        <div class="field">
+                        <div class="field fechabien">
                           <%= f.datetime_select :fecha, :placeholder => 'Fecha' %>
                         </div>
                         <div class="actions">
                           <%= f.submit "Crear", class: "btn"%>
                         </div>
                     <% end %>
+                   <div class="latabla">
                    <table>
                      <tr>
-                       <td><b>Title</b></td>
+                       <td class="lefttd"><b>Title</b></td>
                        <td><b>Fecha</b></td>
                      </tr>
                       <% @meetings.each do |meeting| %>
                         <tr>
-                          <td><%= meeting.title %></td>
+                          <td class="lefttd"><%= meeting.title %></td>
                           <td><%= meeting.fecha %></td>
                         </tr>
                       <% end %>
                   </table>
+                </div>
                   </div>
                   <div class="tab-pane" id="tab5">
                     <b>Lista de Reuniones</b>
-                    <table id="report" width="55%">
+                    <table id="report" width="85%">
                         <%= stylesheet_link_tag 'sources.css', :media => 'screen' %>
                         <tr></tr>
                           <% @meetings.each do |c| %>
