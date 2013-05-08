@@ -10,7 +10,7 @@
     	</td>
 	    <td width="75%" valign="top">
         <h1>Lista de reuniones </h1>
-        <table id="report" width="55%">
+        <table id="report" width="85%">
           <%= stylesheet_link_tag 'sources.css', :media => 'screen' %>
           <tr></tr>
             <% @meetings.each do |c| %>
@@ -84,7 +84,7 @@
                                 <% @mresources = MeetingResource.find_all_by_meeting_id(c) %>
                                 <% @mresources.each do |mresource| %>
                                     <tr>
-                                      <td><i>El <%= mresource.created_at  %></i>:<br /><%= mresource.description %></td>
+                                      <td><i>El <%= mresource.created_at  %></i>:<%= mresource.description %></td>
                                     </tr>
                                     <tr>
                                       <td>Archivo:<br /><a href="/files/resources/<%= mresource.file_name %>" target="_blank">Ver archivo</a></td>
