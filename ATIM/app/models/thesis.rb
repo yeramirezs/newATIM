@@ -5,7 +5,7 @@ class Thesis < ActiveRecord::Base
 	validates_length_of :description, :minimum => 3
 	validates :title, :length => { :maximum => 140 }
 
-	attr_accessible :title, :description, :teacher_id
+	attr_accessible :title, :description, :teacher_id, :state
 
 	belongs_to :teacher
 

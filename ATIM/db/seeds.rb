@@ -260,17 +260,17 @@ some_students =   Student.create([ { :name =>"Jaime Romero",    :email =>"ja.rom
 
 some_thesis =    Thesis.create([{ :title       => "El equilibrio economico dinamico",
                                   :description => "Analisis del equilibrio economico desde Walras hasta los economistas actuales",
-                                  :teacher_id  => 1
+                                  :teacher_id  => 1,
                                   :state => "Inactiva"
                                 },
                                 { :title       => "Los mercados no regulados y la destrucion del tejido social",
                                   :description => "Estudio sobre el efecto de la desregulacion de mercados y el aumento de la pobreza, segun Steinberg",
-                                  :teacher_id  => 2
+                                  :teacher_id  => 2,
                                   :state => "Inactiva"
                                 },
                                 { :title       => "Reactivacion economica post depresion",
                                   :description => "La influencia del estado durante la crisis economica y su estabilizacion posterior",
-                                  :teacher_id  => 3
+                                  :teacher_id  => 3,
                                   :state => "Inactiva"
                                 }
                                ])
